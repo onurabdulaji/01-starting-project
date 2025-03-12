@@ -1,9 +1,13 @@
 import React from "react";
 
-export const TabButton = ({ children, onSelect }) => {
+export const TabButton = ({ children, isSelected, ...props }) => {
   return (
     <li>
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : ""} {...props}>
+        {children}
+      </button>
     </li>
   );
 };
+
+export default TabButton;
